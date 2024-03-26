@@ -1,0 +1,19 @@
+function confirmEnding(str, target) {
+  var regex= new RegExp(target+'$');
+  console.log(regex);
+  if(regex.test(str)){
+    console.log(regex.test(str));
+    return true;
+  }
+  return false;
+  
+  
+  
+}
+
+confirmEnding("Bastian", "n");
+confirmEnding("Congratulation", "on")
+confirmEnding("Connor", "n")
+confirmEnding("Walking on water and developing software from a specification are easy if both are frozen", "specification");
+confirmEnding("He has to give me a new name", "name")
+confirmEnding("Abstraction", "action")

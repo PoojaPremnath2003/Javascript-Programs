@@ -1,0 +1,23 @@
+function fearNotLetter(str) {
+  var alphabet='abcdefghijklmnopqrstuvwxyz';
+  var  nstr='';
+  for (var i=alphabet.indexOf(str[0]);i<alphabet.indexOf(str[0])+str.length;i++){
+    nstr+=alphabet[i];
+}
+//console.log(nstr)
+
+for (var j=0; j<str.length;j++){
+  if(str[j]!=nstr[j]){
+    console.log(nstr[j]);
+    return nstr[j];
+    
+  }
+}
+console.log(undefined);
+return undefined;
+}
+fearNotLetter("stvwx")
+fearNotLetter("abce")
+fearNotLetter("abcdefghjklmno")
+fearNotLetter("bcdf")
+fearNotLetter("abcdefghijklmnopqrstuvwxyz")

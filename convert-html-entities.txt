@@ -1,0 +1,38 @@
+function convertHTML(str) {
+  var words=str.split('');
+  for (var i=0; i<words.length;i++){
+    switch(words[i]){
+      case '&':
+        words[i]='&amp;';
+        break;
+      
+      case '<':
+        words[i]='&lt;';
+        break;
+
+      case '>':
+        words[i]='&gt;';
+        break;
+      
+      case '"':
+        words[i]='&quot;';
+        break;
+
+      case "'":
+        words[i]='&apos;';
+        break;
+    }
+  }
+  
+  var nstr=words.join('');
+  console.log(nstr)
+  return nstr;
+}
+
+convertHTML("Dolce & Gabbana");
+convertHTML("Hamburgers < Pizza < Tacos")
+convertHTML("Sixty > twelve")
+convertHTML('Stuff in "quotation marks"')
+convertHTML("Schindler's List");
+convertHTML("<>");
+convertHTML("abc");

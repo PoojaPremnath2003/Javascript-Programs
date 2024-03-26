@@ -1,0 +1,29 @@
+function sumFibs(num) {
+  var a=1;
+  var b=1;
+  var c=a+b;
+  var arr=[a,b];
+  while (c<=num){
+    arr.push(c);
+    a=b;
+    b=c;
+    c=a+b
+  }
+
+  var numSum=0;
+  for (var j=0; j<arr.length;j++){
+    if(arr[j]%2!=0){
+      numSum+=arr[j]
+    }
+  }
+  //console.log(arr)
+  console.log(numSum)
+  return numSum;
+}
+
+sumFibs(1);
+sumFibs(1000);
+sumFibs(4000000);
+sumFibs(4);
+sumFibs(75024);
+sumFibs(75025);

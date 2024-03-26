@@ -1,0 +1,30 @@
+function truthCheck(collection, pre) {
+var count=0;
+for(var i=0;i<collection.length;i++){
+  var obj=collection[i];
+  for(let elem in obj){
+    if(elem==pre){
+      if(obj[pre]){
+      count+=1
+    }
+  }
+}
+}
+//console.log(count)
+if(count==collection.length){
+  console.log('true')
+  return true;
+}
+else{
+  console.log('false')
+  return false;
+}
+}
+
+
+
+truthCheck([{"name": "Pete", "onBoat": true}, {"name": "Repeat", "onBoat": true, "alias": "Repete"}, {"name": "FastForward", "onBoat": true}], "onBoat");
+truthCheck([{"single": "yes"}], "single");
+truthCheck([{"single": ""}, {"single": "double"}], "single");
+truthCheck([{"single": "double"}, {"single": undefined}], "single");
+truthCheck([{"single": "double"}, {"single": NaN}], "single")

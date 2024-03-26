@@ -1,0 +1,30 @@
+function diffArray(arr1, arr2) {
+  var newArr = [...arr1,...arr2];
+  var unique=[];
+  var obj={};
+  for (var i=0; i<newArr.length;i++){
+    if(obj.hasOwnProperty(newArr[i])){
+      obj[newArr[i]]+=1
+    }
+    else{
+      obj[newArr[i]]=1
+    }
+  }
+  for(let elem in obj){
+    if (obj[elem]==1){
+      for (var j=0; j<newArr.length;j++){
+        if (elem == newArr[j]){
+          unique.push(newArr[j])
+          break
+        }
+      }
+     
+    }
+  } 
+
+  console.log(unique)
+  return unique;
+}
+
+
+diffArray([1, "calf", 3, "piglet"], [1, "calf", 3, 4])

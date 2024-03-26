@@ -1,0 +1,23 @@
+function sumPrimes(num) {
+  function isPrime(j){
+    for(var i=2; i<Math.floor(j/2)+1;i++){
+      if (j%i==0){
+        return false;
+      }
+    }
+    return true;
+  }
+
+  var numSum=0;
+  for (var j=2; j<=num;j++){
+    if(isPrime(j)){
+      numSum+=j
+    }
+  }
+  console.log(numSum)
+  return numSum;
+}
+
+sumPrimes(10);
+sumPrimes(15);
+sumPrimes(977);

@@ -1,0 +1,35 @@
+function rot13(str) {
+  var key='ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz';
+  var val='NOPQRSTUVWXYZABCDEFGHIJKLMnopqrstuvwxyzabcdefghijklm';
+var obj={};
+var nstr='';
+var temp=str.split('');
+var regex=/[a-zA-Z]/;
+for (var i=0;i<key.length;i++){
+  obj[key[i]]=val[i];
+}
+//console.log(obj) 
+
+for(var j=0; j<temp.length;j++){
+  if(regex.test(temp[j])){
+  for (let elem in obj){
+    if(elem==temp[j]){
+      nstr+=obj[elem];
+      break;
+    }
+  }
+  }
+  else{
+    nstr+=temp[j];
+  }
+  
+}
+//console.log(temp)
+console.log(nstr);
+return nstr;
+}
+
+rot13("SERR PBQR PNZC");
+rot13("SERR CVMMN!");
+rot13("SERR YBIR?");
+rot13("GUR DHVPX OEBJA SBK WHZCF BIRE GUR YNML QBT.");

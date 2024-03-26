@@ -1,0 +1,39 @@
+function myReplace(str, before, after) {
+  var words=str.split(' ');
+  if(before[0]==before[0].toUpperCase()){
+    var nstr='';
+    for(var i=0; i<after.length;i++){
+      if(i==0){
+        nstr+=after[0].toUpperCase();
+      }
+      else{
+        nstr+=after[i];
+      }
+    }
+  }
+  else{
+    var nstr='';
+    for(var i=0; i<after.length;i++){
+      if(i==0){
+        nstr+=after[0].toLowerCase();
+      }
+      else{
+        nstr+=after[i];
+      }
+    }
+  }
+  if(!(nstr=='')){
+    after=nstr;
+  }
+  words.splice(words.indexOf(before),1,after);
+  var final=words.join(' ');
+  console.log(final)
+  return final;
+}
+
+myReplace("A quick brown fox jumped over the lazy dog", "jumped", "leaped");
+myReplace("He is Sleeping on the couch", "Sleeping", "sitting")
+myReplace("Let us go to the store", "store", "mall")
+myReplace("I think we should look up there", "up", "Down")
+myReplace("His name is Tom", "Tom", "john") 
+myReplace("Let us get back to more Coding", "Coding", "algorithms")

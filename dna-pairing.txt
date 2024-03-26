@@ -1,0 +1,22 @@
+function pairElement(str) {
+  var final=[]
+  var pairs={"A":'T',"T":"A","G":"C","C":"G"};
+  var strand=str.split('');
+  for(var i=0; i<strand.length;i++){
+    var individual=[strand[i]];
+    
+    for(let elem in pairs){
+      if(elem==strand[i]){
+        individual.push(pairs[elem])
+      } 
+    }
+    final.push(individual);
+  }
+  console.log(final)
+  return final;
+}
+
+pairElement("GCG");
+pairElement("ATCGA")
+pairElement("TTGAG")
+pairElement("CTCTA")

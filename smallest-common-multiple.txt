@@ -1,0 +1,58 @@
+function smallestCommons(arr) {
+  var temp=[];
+  var newArr=[];
+
+  if( arr[0]> arr[1]){
+    arr=arr.reverse();
+  }
+ var large=arr[1];
+ //console.log(large)
+ var num=arr[0];
+ var prod=arr[0]*arr[1];
+ var lcm=0; 
+ var multiplier=2;
+
+ for(var i=0; i<(arr[1]-arr[0]-1);i++){
+   num+=1;
+   prod*=num;
+   temp.push(num);
+ }
+ 
+ newArr=[arr[0],...temp,arr[1]];
+ console.log(newArr);
+ //console.log(prod);
+
+ while (large<=prod){
+   var count=0;
+   for(var j=0; j<newArr.length;j++){
+     if (large%newArr[j]==0){
+       count+=1;
+     }
+    
+   }
+
+  if(count==newArr.length){
+      lcm=large;
+      break;
+  }
+    else{
+      large= arr[1]*multiplier;
+      multiplier+=1
+      //console.log(large)
+    }
+
+    }
+console.log(lcm);
+return lcm
+   }
+ 
+
+
+
+//function multipleGenerator()
+
+//smallestCommons([1,5]);
+//smallestCommons([5, 1]);
+//smallestCommons([2, 10]);
+//smallestCommons([1, 13]);
+smallestCommons([23, 18]);

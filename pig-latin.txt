@@ -1,0 +1,32 @@
+function translatePigLatin(str) {
+  var letters=str.split('');
+  var regex=/[aeiou]/;
+  var nstr='';
+  var others='';
+  var stat=true;
+  for (var i=0; i<letters.length;i++){
+    if(!(regex.test(letters[i]))){
+      nstr+=letters[i]
+    }
+    else{
+      break
+    }
+  }
+
+for (var j=nstr.length;j<(str.length);j++){
+  others+=str[j];
+}
+
+
+if (nstr.length>0){
+var finalString=others+nstr+'ay';
+}
+else{
+  var finalString=str+'way';
+}
+console.log(finalString)
+return finalString;
+}
+
+translatePigLatin("schwartz");
+translatePigLatin("california")
